@@ -1,0 +1,15 @@
+<h1>THE WORD DEFINER</h1>
+
+<h3>YOUR WORDS</h3>
+
+<% if @your_choice_words.any? %>
+  <ul>
+    <% @your_choice_words.each do |word| %>
+      <li><%= word.your_choice_word %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no words to display.</p>
+<% end %>
+
+<a href="/words/new">Add a new word!</a>
