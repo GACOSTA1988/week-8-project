@@ -50,6 +50,16 @@ describe('.find') do
       expect(Word.find(test_word.id)).to(eq(test_word))
     end
   end
+
+  describe('#update') do
+  it("updates a word by id") do
+    test_word = Word.new("Fly", nil)
+    test_word.save()
+    test_word.update("Plane")
+    expect(test_word.your_choice_word).to(eq("Plane"))
+  end
+end
+
 end
 
 
