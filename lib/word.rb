@@ -28,4 +28,7 @@ class Word
         @@total_rows = 0
       end
 
+      def self.find(id)
+        @@your_choice_words[id]
+      end
   end

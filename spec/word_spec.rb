@@ -3,6 +3,10 @@ require 'word'
 require 'definition'
 
 describe '#Word' do
+before(:each) do
+    Word.clear()
+  end
+
 describe(".all") do
     it("This will return an empty array") do
       expect(Word.all()).to(eq([]))
@@ -37,6 +41,15 @@ describe('.clear') do
     end
   end
 
+describe('.find') do
+    it("finds a word by id") do
+      test_word = Word.new("Gator", nil)
+      test_word.save()
+      test_word2 = Word.new("Boar", nil)
+      test_word2.save()
+      expect(Word.find(test_word.id)).to(eq(test_word))
+    end
+  end
 end
 
 
