@@ -9,7 +9,7 @@ class Word
     end
 
     def self.all()
-        @@your_choice_words.values()
+        @@your_choice_words.values
     end
   
     def self.find(your_choice_word)
@@ -39,4 +39,13 @@ class Word
       def delete
         @@your_choice_words.delete(self.id)
       end
+
+      def self.search(x)
+        @@your_choice_words.values.select { |e| /#{x}/i.match? e.name}
+      end
+
+      def self.sorter
+        @@your_choice_words.values.sort_by { |word| word.your_choice_word}
+      end
+    
   end
