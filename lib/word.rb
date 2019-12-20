@@ -35,4 +35,8 @@ class Word
       def update(your_choice_word)
         @your_choice_word = your_choice_word
       end
+
+      def delete
+        @@your_choice_words.delete(self.id)
+      end
   end

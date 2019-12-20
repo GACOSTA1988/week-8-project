@@ -60,6 +60,17 @@ describe('.find') do
   end
 end
 
+describe('#delete') do
+it("deletes a word by id") do
+  test_word = Word.new("Paper", nil)
+  test_word.save()
+  test_word2 = Word.new("Book", nil)
+  test_word2.save()
+  test_word.delete()
+  expect(Word.all).to(eq([test_word2]))
+end
+end
+
 end
 
 
