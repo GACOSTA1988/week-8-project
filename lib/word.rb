@@ -41,11 +41,11 @@ class Word
       end
 
       def self.search(x)
-        @@your_choice_words.values.select { |e| /#{x}/i.match? e.name}
+        @@your_choice_words.values.select { |e| /#{x}/i.match? e.your_choice_word}
       end
 
       def self.sorter
         @@your_choice_words.values.sort_by { |word| word.your_choice_word}
       end
     
-  end
+end
