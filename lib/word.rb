@@ -22,4 +22,10 @@ class Word
     def save
         @@your_choice_words[self.id] = Word.new(self.your_choice_word, self.id)
     end
+
+    def self.clear
+        @@your_choice_words = {}
+        @@total_rows = 0
+      end
+
   end

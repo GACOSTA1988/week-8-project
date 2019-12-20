@@ -25,6 +25,18 @@ it("Checks to see if your_choice_word is the same as another by attribute only")
   expect(test_word).to(eq(test_word2))
 end
 end
+
+describe('.clear') do
+    it("will test if clear method clears @@words") do
+      test_word = Word.new("Air plane", nil)
+      test_word.save()
+      test_word2 = Word.new("Water", nil)
+      test_word2.save()
+      Word.clear()
+      expect(Word.all).to(eq([]))
+    end
+  end
+
 end
 
 
