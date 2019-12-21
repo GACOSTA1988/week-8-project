@@ -1,15 +1,14 @@
 require('sinatra')
 require('sinatra/reloader')
-require('./lib/word') #UPDATE PARENT CLASS
+require('./lib/word') 
 require('pry')
-require('./lib/definition') #UPDATE CHILD CLASS
+require('./lib/definition') 
 also_reload('lib/**/*.rb')
 
 get('/') do
   @your_choice_words = Word.all
   erb(:words)
 end
-
 
 get('/words') do
   if params["search"]
@@ -21,7 +20,6 @@ get('/words') do
   end
   erb(:words)
 end
-
 
 get('/words/new') do
   erb(:new_word)
@@ -48,6 +46,13 @@ end
 patch('/words/:id') do
   @your_choice_word = Word.find(params[:id].to_i())
   @your_choice_word.update(params[:your_choice_word])
+  @your_choice_word = Word.all
+  erb(:words)
+end
+
+delete('/words/:id') do
+  @your_choice_word = Word.find(params[:id].to_i())
+  @your_choice_word.delete()
   @your_choice_word = Word.all
   erb(:words)
 end
