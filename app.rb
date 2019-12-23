@@ -44,15 +44,15 @@ get('/words/:id/edit') do
 end
 
 patch('/words/:id') do
-  @your_choice_word = Word.find(params[:id].to_i())
-  @your_choice_word.update(params[:your_choice_word])
-  @your_choice_word = Word.all
+  your_choice_word = Word.find(params[:id].to_i())
+  your_choice_word.update(params[:your_choice_word])
+  @your_choice_words = Word.all
   erb(:words)
 end
 
 delete('/words/:id') do
-  @your_choice_word = Word.find(params[:id].to_i())
-  @your_choice_word.delete()
-  @your_choice_word = Word.all
+  your_choice_word = Word.find(params[:id].to_i())
+  your_choice_word.delete()
+  @your_choice_words = Word.all
   erb(:words)
 end
