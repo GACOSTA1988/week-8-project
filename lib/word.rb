@@ -47,5 +47,9 @@ class Word
       def self.sorter
         @@your_choice_words.values.sort_by { |word| word.your_choice_word}
       end
+
+      def definitions
+        Definition.find_by_word(self.id)
+      end
     
 end

@@ -78,4 +78,35 @@ describe '#Song' do
       expect(Definition.all).to(eq([definition2]))
     end
   end
+  describe('.find_by_word') do
+    it("finds definitions for a word") do
+      word2 = Word.new("Boat", nil)
+      word2.save
+      definition = Definition.new("Made to use in the ocean", @word.id, nil)
+      definition.save()
+      definition = Definition.new("Used to fish", word2.id , nil)
+      definition.save()
+      expect(Definition.find_by_word(word2.id)).to(eq([definition]))
+    end
+  end
+  describe('#definitions') do
+  it("returns a words definitions") do
+    words = Word.new("Airplane", nil)
+    words.save()
+    definition = Definition.new("Carries passengers", words.id, nil)
+    definition.save()
+    definition2 = Definition.new("Carries cargo", words.id, nil)
+    definition2.save()
+    expect(words.definitions).to(eq([definition, definition2]))
+    end
+  end
+
+  describe('#word') do
+  it("finds the word a definition belongs to") do
+    definition = Definition.new("Paper", @word.id, nil)
+    definition.save()
+    expect(definition.word()).to(eq(@word))
+  end
+end
+
 end
