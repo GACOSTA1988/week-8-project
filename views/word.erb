@@ -1,6 +1,6 @@
-<h4>Your word is: <%= @word.your_choice_word %></h4>
+<h4>The word you picked is: <%= @word.your_choice_word %></h4>
 
-<h3>Your word definitions are:</h3>
+<h3>Your current words definitions are:</h3>
 
 <% if @word.definitions %>
     <ul>
@@ -9,14 +9,14 @@
       <% end %>
     </ul>
   <% else %>
-    <p>There are no definitions listed for this word yet.</p>
+    <p>There are no definitions listed for this word yet. Please add a definition to begin learning!</p>
   <% end %>
 
-<h4>Add a definition:</h4>
 
 <form action="/words/<%= @word.id %>/definitions" method="post">
   <div class="form-group">
-    <label for="word_definition">Enter your definition!</label>
+    <label for="word_definition">Create a new definition below!</label>
+    <br/>
     <input id="word_definition" name="word_definition" class="form-control" type="text">
   </div>
   <button type="submit" class="btn">Add definition</button>
