@@ -34,13 +34,13 @@ post('/words') do
 end
 
 get('/words/:id') do
-  @your_choice_word = Word.find(params[:id].to_i())
+  @word = Word.find(params[:id].to_i())
   erb(:word)
 end
 
 get('/words/:id/edit') do
-  @your_choice_word = Word.find(params[:id].to_i())
-  erb(:edit_word)
+@your_choice_word = Word.find(params[:id].to_i())
+erb(:edit_word)
 end
 
 patch('/words/:id') do

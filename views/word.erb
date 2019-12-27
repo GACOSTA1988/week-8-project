@@ -1,4 +1,4 @@
-<h4>Your word is: <%= @your_choice_word.your_choice_word %></h4>
+<h4>Your word is: <%= @word.your_choice_word %></h4>
 
 <h3>Your word definitions are:</h3>
 
@@ -22,5 +22,5 @@
   <button type="submit" class="btn">Add definition</button>
 </form>
 
-<p><a href="/words/<%= @your_choice_word.id %>/edit">Edit word</a></p>
+<p><a href="/words/<%= @word.id %>/edit">Edit word</a></p>
 <a href="/words">Return to words list</a>
