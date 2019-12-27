@@ -1,8 +1,8 @@
 require('sinatra')
 require('sinatra/reloader')
+require('./lib/definition') 
 require('./lib/word') 
 require('pry')
-require('./lib/definition') 
 also_reload('lib/**/*.rb')
 
 get('/') do
@@ -57,7 +57,7 @@ delete('/words/:id') do
   erb(:words)
 end
 
-get('/words/:id/definitions/:definition_id') do
+get('/words/:id/definition/:definition_id') do
   @definition = Definition.find(params[:definition_id].to_i())
   erb(:definition)
 end

@@ -72,8 +72,6 @@ describe('#delete') do
     expect(Word.all).to(eq([test_word2]))
   end
 end
-
-
   
 end
 
