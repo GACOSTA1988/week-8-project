@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+    font-style: unset;
+    color: red;
+};
+
+body{
+    background-color: red;    
+};
+
+.container{ 
+background-color:blue;
+}
