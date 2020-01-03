@@ -16,7 +16,7 @@
 
 ## Setup/Installation Requirements
 
-* Open google Chrome and visit
+* Open google Chrome and visit https://whispering-shore-05292.herokuapp.com
 
 
 ## Technologies Used
